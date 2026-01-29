@@ -2,7 +2,7 @@
 
 import { useState, ReactNode } from 'react';
 import Link from 'next/link';
-import { FiShoppingCart, FiMenu, FiX } from 'react-icons/fi';
+
 
 
 export interface NavItem {
