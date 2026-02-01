@@ -95,7 +95,7 @@ export default function Header({
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900"
+                      className="text-sm font-medium text-gray-600 transition-colors "
                       onClick={handleNavClick}
                     >
                       {item.label}
