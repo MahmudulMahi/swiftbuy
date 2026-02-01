@@ -1,9 +1,8 @@
-'use client';
+"use client";
 
-import { useState, ReactNode } from 'react';
-import Link from 'next/link';
-
-
+import { useState, ReactNode } from "react";
+import Link from "next/link";
+import { FiShoppingCart, FiMenu, FiX } from "react-icons/fi";
 
 export interface NavItem {
   href: string;
@@ -22,22 +21,20 @@ export interface HeaderProps {
 }
 
 export default function Header({
-  brand = 'Acme Store',
-  brandHref = '/',
+  brand = "Acme Store",
+  brandHref = "/",
   navItems = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/terms', label: 'Terms & Conditions' },
-    { href: '/shipping', label: 'Shipping & Return Policy' },
-    { href: '/privacy', label: 'Privacy Policy' },
-    { href: '/faq', label: 'FAQ' },
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/terms", label: "Terms & Conditions" },
+    { href: "/shipping", label: "Shipping & Return Policy" },
+    { href: "/privacy", label: "Privacy Policy" },
+    { href: "/faq", label: "FAQ" },
   ],
   showCart = true,
 }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
-
-
 
   const handleNavClick = () => {
     setMobileMenuOpen(false);
@@ -74,10 +71,9 @@ export default function Header({
                 aria-label="Open shopping cart"
               >
                 <FiShoppingCart className="w-6 h-6" />
- 
               </button>
             )}
-            
+
             {/* Mobile Menu Button */}
             {navItems.length > 0 && (
               <button
@@ -92,11 +88,25 @@ export default function Header({
                 )}
               </button>
             )}
+            {mobileMenuOpen && navItems.length > 0 && (
+              <div className="border-t border-gray-200 bg-white sm:hidden">
+                <nav className="flex flex-col gap-4 px-4 py-4">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900"
+                      onClick={handleNavClick}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </nav>
+              </div>
+            )}
           </div>
         </div>
-
       </header>
-
     </>
   );
 }
