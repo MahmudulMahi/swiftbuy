@@ -74,7 +74,20 @@ export default function Header({
               </button>
             )}
 
-
+            {/* Mobile Menu Button */}
+            {navItems.length > 0 && (
+              <button
+                className="sm:hidden"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? (
+                  <FiX className="h-6 w-6" />
+                ) : (
+                  <FiMenu className="h-6 w-6" />
+                )}
+              </button>
+            )}
             {mobileMenuOpen && navItems.length > 0 && (
               <div className="border-t border-gray-200 bg-white sm:hidden">
                 <nav className="flex flex-col gap-4 px-4 py-4">
