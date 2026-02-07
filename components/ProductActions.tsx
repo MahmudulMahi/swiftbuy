@@ -2,6 +2,9 @@
 
 import { useState } from 'react';
 import { Product } from '@/types/product';
+import ProductOptions from './ProductOptions';
+import AddToCartButton from './AddToCartButton';
+import ProductHighlights from './ProductHighlights';
 
 interface ProductActionsProps {
   product: Product;
