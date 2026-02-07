@@ -15,7 +15,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           alt={product.name}
           width={400}
           height={400}
-          className="h-full w-full object-cover object-center transition-transform group-hover:scale-105"
+          className="h-full w-full object-cover "
           fallbackText={product.name}
         />
       </div>
