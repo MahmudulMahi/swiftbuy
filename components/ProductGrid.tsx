@@ -21,7 +21,21 @@ export default function ProductGrid({
     searchParams.get('category') || initialCategory
   );
 
+  useEffect(() => {
+    const category = searchParams.get('category') || 'all';
+    setSelectedCategory(category);
+  }, [searchParams]);
 
+  const handleCategoryChange = (categorySlug: string) => {
+    setSelectedCategory(categorySlug);
+    const params = new URLSearchParams(searchParams.toString());
+    if (categorySlug === 'all') {
+      params.delete('category');
+    } else {
+      params.set('category', categorySlug);
+    }
+    router.push(`/?${params.toString()}`, { scroll: false });
+  };
 
   const filteredProducts =
     selectedCategory === 'all'
