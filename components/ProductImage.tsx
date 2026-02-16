@@ -8,7 +8,8 @@ interface ProductImageProps {
   alt: string;
   width: number;
   height: number;
-
+  className?: string;
+  fallbackText?: string;
 }
 
 export default function ProductImage({
@@ -16,7 +17,8 @@ export default function ProductImage({
   alt,
   width,
   height,
-
+  className,
+  fallbackText,
 }: ProductImageProps) {
   const [imgSrc, setImgSrc] = useState(src);
   const [hasError, setHasError] = useState(false);
