@@ -180,7 +180,75 @@ export default function ProductOptions({
         </div>
       )}
 
-
+      {/* Quantity Selection */}
+      <div>
+        <div className="flex items-center justify-start mb-4">
+          <label className="block text-base font-semibold text-gray-900 mr-2">
+            Quantity
+          </label>
+          <span className="text-sm font-medium text-gray-600">
+            ({quantity})
+          </span>
+          {product.stock && (
+            <span className="text-sm text-gray-500 ml-2">
+              • {product.stock} in stock
+            </span>
+          )}
+        </div>
+        <div className="flex items-center gap-4">
+          <div className="flex items-center border-2 border-gray-300 rounded-lg overflow-hidden bg-white">
+            <button
+              onClick={() => handleQuantityChange(quantity - 1)}
+              disabled={quantity <= 1}
+              className="flex items-center justify-center w-12 h-12 text-gray-700 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors duration-200"
+              aria-label="Decrease quantity"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M20 12H4"
+                />
+              </svg>
+            </button>
+            <input
+              type="number"
+              min="1"
+              max={maxQuantity}
+              value={quantity}
+              onChange={(e) => handleQuantityChange(parseInt(e.target.value) || 1)}
+              className="w-16 text-center border-x-2 border-gray-300 py-2 text-base font-semibold text-gray-900 focus:outline-none focus:ring-0 bg-transparent"
+              aria-label="Quantity"
+            />
+            <button
+              onClick={() => handleQuantityChange(quantity + 1)}
+              disabled={quantity >= maxQuantity}
+              className="flex items-center justify-center w-12 h-12 text-gray-700 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors duration-200"
+              aria-label="Increase quantity"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M12 4v16m8-8H4"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
