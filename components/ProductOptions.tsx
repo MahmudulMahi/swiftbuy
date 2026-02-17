@@ -144,7 +144,41 @@ export default function ProductOptions({
         </div>
       )}
 
-
+      {/* Size Selection */}
+      {product.sizes && product.sizes.length > 0 && (
+        <div>
+          <div className="flex items-center justify-start mb-4">
+            <label className="block text-base font-semibold text-gray-900 mr-2">
+              Size
+            </label>
+            {selectedSize && (
+              <span className="text-sm font-medium text-gray-600">
+                ({selectedSize})
+              </span>
+            )}
+          </div>
+          <div className="flex flex-wrap gap-3">
+            {product.sizes.map((size) => {
+              const isSelected = selectedSize === size;
+              return (
+                <button
+                  key={size}
+                  onClick={() => handleSizeChange(size)}
+                  className={`px-5 py-2.5 min-w-[65px] text-sm font-semibold rounded-lg border-2 transition-all duration-200 ${
+                    isSelected
+                      ? 'border-gray-900 bg-gray-900 text-white shadow-md scale-105'
+                      : 'border-gray-300 text-gray-700 bg-white hover:border-gray-900 hover:bg-gray-50 hover:shadow-sm'
+                  }`}
+                  aria-label={`Select size ${size}`}
+                  aria-pressed={isSelected}
+                >
+                  {size}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
 
     </div>
