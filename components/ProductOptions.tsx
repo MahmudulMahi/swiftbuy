@@ -253,3 +253,26 @@ export default function ProductOptions({
   );
 }
 
+// Helper function to get color values for common color names
+function getColorValue(colorName: string): string | null {
+  const colorMap: Record<string, string> = {
+    black: '#000000',
+    white: '#FFFFFF',
+    red: '#EF4444',
+    blue: '#3B82F6',
+    green: '#10B981',
+    yellow: '#FBBF24',
+    orange: '#F97316',
+    purple: '#A855F7',
+    pink: '#EC4899',
+    gray: '#6B7280',
+    grey: '#6B7280',
+    navy: '#1E3A8A',
+    brown: '#92400E',
+    beige: '#F5F5DC',
+    tan: '#D2B48C',
+  };
+
+  const normalized = colorName.toLowerCase().trim();
+  return colorMap[normalized] || null;
+}
