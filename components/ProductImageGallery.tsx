@@ -3,6 +3,10 @@
 import { useState } from 'react';
 import ProductImage from './ProductImage';
 
+interface ProductImageGalleryProps {
+  images: string[];
+  productName: string;
+}
 
 export default function ProductImageGallery({
   images,
