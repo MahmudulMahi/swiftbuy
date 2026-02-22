@@ -13,9 +13,17 @@ export default function RelatedProducts({
   limit = 4,
 }: RelatedProductsProps) {
   // Get products from the same category, excluding the current product
+  const relatedProducts = allProducts
+    .filter(
+      (product) =>
+        product.category === currentProduct.category &&
+        product.id !== currentProduct.id
+    )
+    .slice(0, limit);
 
-
-
+  if (relatedProducts.length === 0) {
+    return null;
+  }
 
   return (
     <section className="border-t border-gray-200 pt-12 mt-16">
