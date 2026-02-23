@@ -148,7 +148,24 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                             <FiPlus className="w-4 h-4 text-gray-600" />
                           </button>
                         </div>
-
+                        <div className="flex items-center gap-3">
+                          <span className="text-sm font-semibold text-gray-900">
+                            ${(item.product.price * item.quantity).toFixed(2)}
+                          </span>
+                          <button
+                            onClick={() =>
+                              removeFromCart(
+                                item.product.id,
+                                item.selectedColor,
+                                item.selectedSize
+                              )
+                            }
+                            className="p-1 hover:bg-red-50 rounded transition-colors"
+                            aria-label="Remove item"
+                          >
+                            <FiTrash2 className="w-4 h-4 text-red-600" />
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
