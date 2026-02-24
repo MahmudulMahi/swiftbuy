@@ -16,7 +16,7 @@ interface CartContextType {
   updateQuantity: (
     productId: string,
     quantity: number,
-    selectedColor?: string,
+    selectedColor?: string ,
     selectedSize?: string
   ) => void;
   clearCart: () => void;
@@ -65,12 +65,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
 
 
+
+
   return (
     <CartContext.Provider
       value={{
         items,
         addToCart,
-   
 
       }}
     >

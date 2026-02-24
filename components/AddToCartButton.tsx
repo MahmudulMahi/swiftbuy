@@ -32,7 +32,7 @@ export default function AddToCartButton({
   return (
     <button
       onClick={handleAddToCart}
-      className={`group relative w-full overflow-hidden rounded-lg bg-gray-900 px-8 py-4 text-base font-semibold text-white transition-all duration-200 hover:bg-gray-800 hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] ${className}`}
+      className={`group relative w-full overflow-hidden rounded-lg bg-gray-900 px-8 py-4 text-base font-semibold text-white transition-all duration-200 hover:bg-gray-800 hover:shadow-xl hover:scale-[1.02] active:scale-[0.99] ${className}`}
     >
       <span className="relative z-10 flex items-center justify-center gap-3">
         {isAdded ? (
