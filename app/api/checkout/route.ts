@@ -14,6 +14,14 @@ export async function POST(request: NextRequest) {
     }
 
 
+    // Create Stripe Checkout Session
+    // Store only essential item info in metadata (Stripe has 500 char limit per metadata value)
+    const itemsSummary = items.map((item: any) => ({
+      id: item.product.id,
+      qty: item.quantity,
+      color: item.selectedColor || '',
+      size: item.selectedSize || '',
+    }));
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
