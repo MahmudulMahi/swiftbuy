@@ -13,6 +13,19 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Create line items for Stripe Checkout
+    const lineItems = items.map((item: any) => ({
+      price_data: {
+        currency: item.product.currency.toLowerCase(),
+        product_data: {
+          name: item.product.name,
+          description: item.product.description,
+          images: item.product.images || [item.product.image],
+        },
+        unit_amount: Math.round(item.product.price * 100), // Convert to cents
+      },
+      quantity: item.quantity,
+    }));
 
     // Create Stripe Checkout Session
     // Store only essential item info in metadata (Stripe has 500 char limit per metadata value)
