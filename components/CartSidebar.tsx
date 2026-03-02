@@ -73,7 +73,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                 <Link
                   href="/"
                   onClick={onClose}
-                  className="px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors"
+                  className="px-6 py-3 bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors"
                 >
                   Continue Shopping
                 </Link>
@@ -88,7 +88,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                     <Link
                       href={`/product/${item.product.slug}`}
                       onClick={onClose}
-                      className="shrink-0 w-20 h-20 rounded-lg overflow-hidden bg-gray-100"
+                      className="shrink-0 w-20 h-20 rounded-lg overflow-hidden bg-gray-200"
                     >
                       <ProductImage
                         src={item.product.image}
@@ -136,7 +136,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                           >
                             <FiMinus className="w-4 h-4 text-gray-600" />
                           </button>
-                          <span className="w-8 text-center text-sm font-medium text-gray-900">
+                          <span className="w-8 text-center text-sm font-medium text-gray-700">
                             {item.quantity}
                           </span>
                           <button
