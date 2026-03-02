@@ -19,7 +19,20 @@ export default function CheckoutCancelPage() {
           Your payment was cancelled. No charges have been made. You can
           continue shopping or try again.
         </p>
-
+        <div className="space-y-3">
+          <Link
+            href="/checkout"
+            className="block w-full rounded-lg bg-gray-900 px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-gray-800"
+          >
+            Try Again
+          </Link>
+          <Link
+            href="/"
+            className="block w-full rounded-lg border-2 border-gray-300 px-6 py-3 text-base font-semibold text-gray-900 transition-colors hover:border-gray-900 hover:bg-gray-50"
+          >
+            Continue Shopping
+          </Link>
+        </div>
       </div>
     </div>
   );
