@@ -10,7 +10,11 @@ interface ProductPageProps {
   params: Promise<{ slug: string }>;
 }
 
-
+export async function generateStaticParams() {
+  return products.map((product) => ({
+    slug: product.slug,
+  }));
+}
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const { slug } = await params;
@@ -69,7 +73,49 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
       </div>
 
- 
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        {/* Main Product Section */}
+        <div className="grid gap-12 lg:grid-cols-2 mb-16">
+          {/* Product Images */}
+          <div className="sticky top-8 self-start">
+            <ProductImageGallery
+              images={product.images || [product.image]}
+              productName={product.name}
+            />
+          </div>
+
+          {/* Product Info */}
+          <div className="flex flex-col">
+            {/* Product Title & Price */}
+            <div className="mb-6">
+              <h1 className="text-4xl font-bold text-gray-900 tracking-tight mb-4">
+                {product.name}
+              </h1>
+              <div className="flex items-baseline gap-3">
+                <p className="text-4xl font-bold text-gray-900">
+                  ${product.price.toFixed(2)}
+                </p>
+                <span className="text-lg font-normal text-gray-500">
+                  {product.currency}
+                </span>
+              </div>
+            </div>
+
+
+            {/* Short Description */}
+            <div className="mb-8">
+              <p className="text-base leading-7 text-gray-600">
+                {product.description}
+              </p>
+            </div>
+
+            {/* Product Actions (Options, Add to Cart, Highlights) */}
+            <ProductActions product={product} />
+          </div>
+        </div>
+
+
+      </div>
     </>
   );
 }
