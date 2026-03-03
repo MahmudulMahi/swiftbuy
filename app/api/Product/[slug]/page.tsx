@@ -134,7 +134,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </div>
         </div>
 
+        {/* Product Details Tabs */}
+        <ProductDetailsTabs description={product.description} />
 
+        {/* Related Products */}
+        <RelatedProducts
+          currentProduct={product}
+          allProducts={products}
+        />
       </div>
     </>
   );
