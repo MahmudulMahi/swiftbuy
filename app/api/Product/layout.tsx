@@ -15,7 +15,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
+export const metadata: Metadata = {
+  title: "Acme Store - Quality Products",
+  description: "Your one-stop shop for quality products",
+};
 
 export default function RootLayout({
   children,
