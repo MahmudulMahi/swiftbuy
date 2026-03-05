@@ -44,7 +44,20 @@ function CheckoutSuccessContent() {
             Order ID: {sessionId}
           </p>
         )}
- 
+        <div className="space-y-3">
+          <Link
+            href="/"
+            className="block w-full rounded-lg bg-gray-900 px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-gray-800"
+          >
+            Continue Shopping
+          </Link>
+          <Link
+            href="/orders"
+            className="block w-full rounded-lg border-2 border-gray-300 px-6 py-3 text-base font-semibold text-gray-900 transition-colors hover:border-gray-900 hover:bg-gray-50"
+          >
+            View Orders
+          </Link>
+        </div>
       </div>
     </div>
   );
