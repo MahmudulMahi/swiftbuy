@@ -146,6 +146,11 @@ export const products: Product[] = [
   },
 ];
 
+export const categories = [
+  { name: 'All', slug: 'all' },
+  { name: 'Shirts', slug: 'shirts' },
+  { name: 'Stickers', slug: 'stickers' },
+];
 
 export function getProductBySlug(slug: string): Product | undefined {
   return products.find((product) => product.slug === slug);
