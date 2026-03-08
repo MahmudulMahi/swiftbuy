@@ -67,7 +67,7 @@ export default function CheckoutSuccessPage() {
   return (
     <Suspense fallback={
       <div className="flex items-center justify-center min-h-[60vh]">
-        <div className="max-w-md w-full mx-auto px-4 py-12 text-center">
+        <div className="max-w-md w-full mx-auto px-4 py-10 text-center">
           <div className="mb-6 flex justify-center">
             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center">
               <FiCheckCircle className="w-12 h-12 text-green-600" />
