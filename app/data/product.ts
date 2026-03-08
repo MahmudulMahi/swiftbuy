@@ -109,7 +109,41 @@ export const products: Product[] = [
     sizes: ['0-3M', '3-6M', '6-12M', '12-18M'],
     stock: 20,
   },
-
+  {
+    id: '7',
+    name: 'Acme Baby Cap',
+    description: 'A cute cap to protect your baby',
+    price: 10.00,
+    currency: 'USD',
+    image: 'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=800&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=800&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=800&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=800&h=800&fit=crop&q=80',
+    ],
+    category: 'accessories',
+    slug: 'acme-baby-cap',
+    colors: ['White', 'Pink', 'Blue', 'Beige'],
+    sizes: ['Newborn', '0-6M', '6-12M'],
+    stock: 15,
+  },
+  {
+    id: '8',
+    name: 'Acme Sticker Pack',
+    description: 'A collection of Acme branded stickers',
+    price: 5.00,
+    currency: 'USD',
+    image: 'https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=800&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=800&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1625772452859-1c032693bbd3?w=800&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=800&h=800&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1625772452859-1c032693bbd3?w=800&h=800&fit=crop&q=80',
+    ],
+    category: 'stickers',
+    slug: 'acme-sticker-pack',
+    stock: 100,
+  },
 ];
 
 
