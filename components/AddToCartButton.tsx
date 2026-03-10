@@ -5,6 +5,13 @@ import { useCart } from '@/contexts/CartContext';
 import { Product } from '@/types/product';
 import { FiShoppingCart, FiCheck } from 'react-icons/fi';
 
+interface AddToCartButtonProps {
+  product: Product;
+  selectedColor?: string;
+  selectedSize?: string;
+  quantity: number;
+  className?: string;
+}
 
 export default function AddToCartButton({
   product,
