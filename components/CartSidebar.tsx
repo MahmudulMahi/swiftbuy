@@ -21,7 +21,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
       {/* Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-60 z-40 transition-opacity"
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity"
           onClick={onClose}
         />
       )}
@@ -73,7 +73,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                 <Link
                   href="/"
                   onClick={onClose}
-                  className="px-6 py-3 bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors"
+                  className="px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors"
                 >
                   Continue Shopping
                 </Link>
@@ -88,7 +88,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                     <Link
                       href={`/product/${item.product.slug}`}
                       onClick={onClose}
-                      className="shrink-0 w-20 h-20 rounded-lg overflow-hidden bg-gray-200"
+                      className="shrink-0 w-20 h-20 rounded-lg overflow-hidden bg-gray-100"
                     >
                       <ProductImage
                         src={item.product.image}
@@ -136,7 +136,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                           >
                             <FiMinus className="w-4 h-4 text-gray-600" />
                           </button>
-                          <span className="w-8 text-center text-sm font-medium text-gray-700">
+                          <span className="w-8 text-center text-sm font-medium text-gray-900">
                             {item.quantity}
                           </span>
                           <button
@@ -180,30 +180,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
             )}
           </div>
 
-          {/* Footer */}
-          {items.length > 0 && (
-            <div className="border-t border-gray-200 p-6 space-y-4">
-              <div className="flex items-center justify-between text-lg font-bold text-gray-900">
-                <span>Total:</span>
-                <span>${total.toFixed(2)}</span>
-              </div>
-              <div className="space-y-2">
-                <Link
-                  href="/checkout"
-                  onClick={onClose}
-                  className="block w-full text-center px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors"
-                >
-                  Proceed to Checkout
-                </Link>
-                <button
-                  onClick={clearCart}
-                  className="w-full px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-gray-400 hover:bg-gray-50 transition-colors"
-                >
-                  Clear Cart
-                </button>
-              </div>
-            </div>
-          )}
+
         </div>
       </div>
     </>
