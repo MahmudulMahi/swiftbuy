@@ -180,7 +180,30 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
             )}
           </div>
 
-
+          {/* Footer */}
+          {items.length > 0 && (
+            <div className="border-t border-gray-200 p-6 space-y-4">
+              <div className="flex items-center justify-between text-lg font-bold text-gray-900">
+                <span>Total:</span>
+                <span>${total.toFixed(2)}</span>
+              </div>
+              <div className="space-y-2">
+                <Link
+                  href="/checkout"
+                  onClick={onClose}
+                  className="block w-full text-center px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+                >
+                  Proceed to Checkout
+                </Link>
+                <button
+                  onClick={clearCart}
+                  className="w-full px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-gray-400 hover:bg-gray-50 transition-colors"
+                >
+                  Clear Cart
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </>
