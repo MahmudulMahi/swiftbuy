@@ -39,8 +39,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const existingItemIndex = prevItems.findIndex(
         (item) =>
           item.product.id === product.id &&
-          item.selectedColor === selectedColor &&
-          item.selectedSize === selectedSize
+  
       );
 
       if (existingItemIndex > -1) {
