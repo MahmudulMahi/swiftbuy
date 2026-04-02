@@ -26,7 +26,59 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
+export function CartProvider({ children }: { children: ReactNode }) {
+  const [items, setItems] = useState<CartItem[]>([]);
 
+  const addToCart = (
+    product: Product,
+    quantity: number,
+    selectedColor?: string,
+    selectedSize?: string
+  ) => {
+    setItems((prevItems) => {
+      const existingItemIndex = prevItems.findIndex(
+        (item) =>
+          item.product.id === product.id &&
+          item.selectedColor === selectedColor &&
+          item.selectedSize === selectedSize
+      );
+
+      if (existingItemIndex > -1) {
+        // Update existing item quantity
+        const updatedItems = [...prevItems];
+        updatedItems[existingItemIndex].quantity += quantity;
+        return updatedItems;
+      } else {
+        // Add new item
+        return [
+          ...prevItems,
+          {
+            product,
+            quantity,
+            selectedColor,
+            selectedSize,
+          },
+        ];
+      }
+    });
+  };
+
+
+
+
+
+  return (
+    <CartContext.Provider
+      value={{
+        items,
+        addToCart,
+
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
+}
 
 export function useCart() {
   const context = useContext(CartContext);
