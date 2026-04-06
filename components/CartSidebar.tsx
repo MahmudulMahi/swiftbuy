@@ -120,7 +120,59 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                           {item.selectedSize && <span>Size: {item.selectedSize}</span>}
                         </div>
                       )}
-
+                      <div className="mt-2 flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <button
+                            onClick={() =>
+                              updateQuantity(
+                                item.product.id,
+                                item.quantity - 1,
+                                item.selectedColor,
+                                item.selectedSize
+                              )
+                            }
+                            className="p-1 hover:bg-gray-100 rounded transition-colors"
+                            aria-label="Decrease quantity"
+                          >
+                            <FiMinus className="w-4 h-4 text-gray-600" />
+                          </button>
+                          <span className="w-8 text-center text-sm font-medium text-gray-900">
+                            {item.quantity}
+                          </span>
+                          <button
+                            onClick={() =>
+                              updateQuantity(
+                                item.product.id,
+                                item.quantity + 1,
+                                item.selectedColor,
+                                item.selectedSize
+                              )
+                            }
+                            className="p-1 hover:bg-gray-100 rounded transition-colors"
+                            aria-label="Increase quantity"
+                          >
+                            <FiPlus className="w-4 h-4 text-gray-600" />
+                          </button>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <span className="text-sm font-semibold text-gray-900">
+                            ${(item.product.price * item.quantity).toFixed(2)}
+                          </span>
+                          <button
+                            onClick={() =>
+                              removeFromCart(
+                                item.product.id,
+                                item.selectedColor,
+                                item.selectedSize
+                              )
+                            }
+                            className="p-1 hover:bg-red-50 rounded transition-colors"
+                            aria-label="Remove item"
+                          >
+                            <FiTrash2 className="w-4 h-4 text-red-600" />
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 ))}
