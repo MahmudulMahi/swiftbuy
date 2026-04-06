@@ -131,7 +131,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                                 item.selectedSize
                               )
                             }
-                            className="p-1 hover:bg-gray-100 rounded transition-colors"
+                            className="p-2 hover:bg-gray-100 rounded transition-colors"
                             aria-label="Decrease quantity"
                           >
                             <FiMinus className="w-4 h-4 text-gray-600" />
