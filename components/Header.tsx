@@ -67,7 +67,7 @@ export default function Header({
             {showCart && (
               <button
                 onClick={() => setCartOpen(true)}
-                className="relative p-2 text-gray-600 hover:text-gray-900 transition-colors"
+                className="relative p-2 text-gray-700 hover:text-gray-900 transition-colors"
                 aria-label="Open shopping cart"
               >
                 <FiShoppingCart className="w-6 h-6" />
