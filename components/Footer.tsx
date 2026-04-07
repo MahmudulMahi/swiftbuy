@@ -69,7 +69,27 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900">Support</h3>
+            <ul className="mt-4 space-y-2">
+              <li>
+                <Link
+                  href="/shipping"
+                  className="text-sm text-gray-600 hover:text-gray-900"
+                >
+                  Shipping & Returns
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/faq"
+                  className="text-sm text-gray-600 hover:text-gray-900"
+                >
+                  FAQ
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
         <div className="mt-8 border-t border-gray-200 pt-8">
           <p className="text-center text-sm text-gray-600">
