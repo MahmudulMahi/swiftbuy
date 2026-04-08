@@ -44,17 +44,7 @@ export default function ProductActions({ product }: ProductActionsProps) {
       </div>
 
       {/* Add to Cart Section */}
-      <div className="space-y-4 mb-8">
-        <AddToCartButton
-          product={product}
-          selectedColor={selectedColor}
-          selectedSize={selectedSize}
-          quantity={quantity}
-        />
-        <button className="w-full rounded-lg border-2 border-gray-300 px-8 py-4 text-base font-semibold text-gray-900 transition-all duration-200 hover:border-gray-900 hover:bg-gray-50">
-          Buy Now
-        </button>
-      </div>
+
 
       {/* Product Highlights */}
       <ProductHighlights />
