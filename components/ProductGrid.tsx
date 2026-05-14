@@ -45,7 +45,19 @@ export default function ProductGrid({
   return (
     <div>
       <div className="mb-8 flex flex-wrap gap-4 border-b border-gray-200 pb-4">
-
+        {categories.map((category) => (
+          <button
+            key={category.slug}
+            onClick={() => handleCategoryChange(category.slug)}
+            className={`text-sm font-medium transition-colors ${
+              selectedCategory === category.slug
+                ? 'text-gray-900 border-b-2 border-gray-900 pb-1'
+                : 'text-gray-600 hover:text-gray-900'
+            }`}
+          >
+            {category.name}
+          </button>
+        ))}
       </div>
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {filteredProducts.map((product) => (
