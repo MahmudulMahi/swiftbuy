@@ -26,16 +26,7 @@ export default function ProductGrid({
     setSelectedCategory(category);
   }, [searchParams]);
 
-  const handleCategoryChange = (categorySlug: string) => {
-    setSelectedCategory(categorySlug);
-    const params = new URLSearchParams(searchParams.toString());
-    if (categorySlug === 'all') {
-      params.delete('category');
-    } else {
-      params.set('category', categorySlug);
-    }
-    router.push(`/?${params.toString()}`, { scroll: false });
-  };
+
 
   const filteredProducts =
     selectedCategory === 'all'
