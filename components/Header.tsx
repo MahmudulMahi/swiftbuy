@@ -62,7 +62,49 @@ export default function Header({
             </nav>
           )}
 
+          <div className="flex items-center gap-4">
+            {/* Cart Button */}
+            {showCart && (
+              <button
+                onClick={() => setCartOpen(true)}
+                className="relative p-2 text-gray-700 hover:text-gray-900 transition-colors"
+                aria-label="Open shopping cart"
+              >
+                <FiShoppingCart className="w-6 h-6" />
+              </button>
+            )}
 
+            {/* Mobile Menu Button */}
+            {navItems.length > 0 && (
+              <button
+                className="sm:hidden"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? (
+                  <FiX className="h-6 w-6" />
+                ) : (
+                  <FiMenu className="h-6 w-6" />
+                )}
+              </button>
+            )}
+            {mobileMenuOpen && navItems.length > 0 && (
+              <div className="border-t border-gray-200 bg-white sm:hidden">
+                <nav className="flex flex-col gap-4 px-4 py-4">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900"
+                      onClick={handleNavClick}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </nav>
+              </div>
+            )}
+          </div>
         </div>
       </header>
     </>
