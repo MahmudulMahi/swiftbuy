@@ -40,7 +40,35 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900">Company</h3>
+            <ul className="mt-4 space-y-2">
+              <li>
+                <Link
+                  href="/about"
+                  className="text-sm text-gray-600 hover:text-gray-900"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terms"
+                  className="text-sm text-gray-600 hover:text-gray-900"
+                >
+                  Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy"
+                  className="text-sm text-gray-600 hover:text-gray-900"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+            </ul>
+          </div>
           <div>
             <h3 className="text-sm font-semibold text-gray-900">Support</h3>
             <ul className="mt-4 space-y-2">
