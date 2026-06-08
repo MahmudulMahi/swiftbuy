@@ -11,7 +11,35 @@ export default function Footer() {
               Your one-stop shop for quality products.
             </p>
           </div>
-
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900">Shop</h3>
+            <ul className="mt-4 space-y-2">
+              <li>
+                <Link
+                  href="/"
+                  className="text-sm text-gray-600 hover:text-gray-900"
+                >
+                  All Products
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/?category=shirts"
+                  className="text-sm text-gray-600 hover:text-gray-900"
+                >
+                  Shirts
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/?category=stickers"
+                  className="text-sm text-gray-600 hover:text-gray-900"
+                >
+                  Stickers
+                </Link>
+              </li>
+            </ul>
+          </div>
           <div>
             <h3 className="text-sm font-semibold text-gray-900">Company</h3>
             <ul className="mt-4 space-y-2">
